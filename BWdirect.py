@@ -107,7 +107,7 @@ def main():
 
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         blurred = cv2.GaussianBlur(gray, (5, 5), 0)
-        _, binary = cv2.threshold(blurred, 60, 255, cv2.THRESH_BINARY_INV)
+        _, binary = cv2.threshold(blurred, 30, 255, cv2.THRESH_BINARY_INV)
         height, width = frame.shape[:2]
         cropped_binary = binary[:int(height * 0.75), :]
         kernel = np.ones((5, 5), np.uint8)
